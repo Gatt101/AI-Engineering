@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "research_state"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"restart_verified\": true,\n  \"run\": {\n    \"id\": \"e03aa3cb-2e25-402e-8a65-c16bd2664992\",\n    \"tenant_id\": \"demo\",\n    \"actor_id\": \"researcher\",\n    \"idempotency_key\": \"demo\",\n    \"request_hash\": \"9b44e94f0f049820b676b4be261c03089364326817b9aa0f29255addc0c16b42\",\n    \"question\": \"Acme retention\",\n    \"status\": \"queued\",\n    \"version\": 1,\n    \"brief\": null,\n    \"draft\": null,\n    \"created_at\": 1793518605.889923,\n    \"updated_at\": 1793518605.8899236,\n    \"attempts\": 0,\n    \"lease_owner\": null,\n    \"lease_until\": null,\n    \"error_code\": null,\n    \"action\": null\n  }\n}\n",
+  "stderr": ""
+}

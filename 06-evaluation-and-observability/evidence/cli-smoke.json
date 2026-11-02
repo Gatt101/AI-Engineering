@@ -1,0 +1,12 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "research_evaluation",
+    "--output",
+    "evidence/offline-report.json"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"passed\": true, \"gates\": {\"task_success\": true, \"retrieval_recall\": true, \"citation_validity\": true, \"permission_denial\": true, \"recovery\": true}, \"output\": \"evidence\\\\offline-report.json\"}\n",
+  "stderr": ""
+}

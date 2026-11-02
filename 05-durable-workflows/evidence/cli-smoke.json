@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "research_workflows"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"recovery_success\": true,\n  \"receipt_deduplicated\": true,\n  \"status\": \"completed\",\n  \"delivery\": \"fake\",\n  \"audit\": [\n    {\n      \"id\": \"4f00d34e-0443-4848-89c1-10ad9d93250e\",\n      \"run_id\": \"a8cfc07a-a469-4c1d-86de-9d569c6dbeb9\",\n      \"event\": \"run.created\",\n      \"created_at\": 100.0\n    },\n    {\n      \"id\": \"8f25098f-22ad-46fc-951a-f3207dc5d8a9\",\n      \"run_id\": \"a8cfc07a-a469-4c1d-86de-9d569c6dbeb9\",\n      \"event\": \"action.approved\",\n      \"created_at\": 100.0\n    },\n    {\n      \"id\": \"9a0893b8-62a1-4f32-9810-441cb90c7d19\",\n      \"run_id\": \"a8cfc07a-a469-4c1d-86de-9d569c6dbeb9\",\n      \"event\": \"action.dispatching\",\n      \"created_at\": 100.0\n    },\n    {\n      \"id\": \"9d905ffd-afbd-4b5c-b6cf-86d4245f3120\",\n      \"run_id\": \"a8cfc07a-a469-4c1d-86de-9d569c6dbeb9\",\n      \"event\": \"run.awaiting_approval\",\n      \"created_at\": 100.0\n    },\n    {\n      \"id\": \"ff976b72-39dc-4a5a-b684-fdbcf6ee59c6\",\n      \"run_id\": \"a8cfc07a-a469-4c1d-86de-9d569c6dbeb9\",\n      \"event\": \"run.researched\",\n      \"created_at\": 100.0\n    },\n    {\n      \"id\": \"1743e682-1de9-44f3-b6bd-d5e61ef7d50e\",\n      \"run_id\": \"a8cfc07a-a469-4c1d-86de-9d569c6dbeb9\",\n      \"event\": \"action.sent\",\n      \"created_at\": 102.0\n    }\n  ]\n}\n",
+  "stderr": ""
+}

@@ -1,0 +1,25 @@
+[project]
+name = "ai-engineering-portfolio"
+version = "0.2.0"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv.workspace]
+members = ["01-native-llm-sdk", "02-retrieval-and-evidence", "03-tool-calling-agent", "04-persistence-and-state", "05-durable-workflows", "06-evaluation-and-observability", "07-production-engineering", "08-engineering-portfolio"]
+
+[dependency-groups]
+dev = ["pytest>=8", "pytest-asyncio>=1", "httpx>=0.28", "ruff>=0.14"]
+
+[tool.pytest.ini_options]
+testpaths = ["01-native-llm-sdk/tests", "02-retrieval-and-evidence/tests", "03-tool-calling-agent/tests", "04-persistence-and-state/tests", "05-durable-workflows/tests", "06-evaluation-and-observability/tests", "07-production-engineering/tests", "08-engineering-portfolio/tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+addopts = "--import-mode=importlib"
+norecursedirs = [".migration-backup", ".venv", ".uv-cache", ".clean-uv-cache"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+extend-exclude = [".migration-backup", ".uv-cache", ".clean-uv-cache"]
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]

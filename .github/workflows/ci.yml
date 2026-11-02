@@ -1,0 +1,38 @@
+name: ResearchOps verification
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17.6-alpine
+        env:
+          POSTGRES_DB: researchops_test
+          POSTGRES_USER: researchops
+          POSTGRES_PASSWORD: ci-only-password
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd 'pg_isready -U researchops'
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      RESEARCHOPS_TEST_DATABASE_URL: postgresql+psycopg://researchops:ci-only-password@localhost:5432/researchops_test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.9.5"
+          python-version: "3.12"
+      - run: uv sync --locked --all-packages
+      - run: uv run --all-packages ruff check .
+      - run: uv run --all-packages ruff format --check .
+      - run: uv run --all-packages pytest -q --junitxml=.artifacts/tests.xml
+      - run: uv run --all-packages python -m research_evaluation --output .artifacts/evaluation.json
+      - run: uv run --all-packages python -m research_portfolio --output .artifacts/demo.json
+      - run: docker build -f 07-production-engineering/infra/Dockerfile -t researchops:ci .
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: offline-evidence
+          path: .artifacts/

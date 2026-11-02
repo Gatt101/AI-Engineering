@@ -1,0 +1,12 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "research_evidence.retrieval",
+    "--report",
+    "evidence/retrieval-report.json"
+  ],
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ""
+}

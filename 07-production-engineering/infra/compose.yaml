@@ -1,0 +1,50 @@
+# Local synthetic staging rehearsal. Bind only to loopback. Cloud config stays deferred.
+services:
+  db:
+    image: postgres:17.6-alpine
+    environment:
+      POSTGRES_DB: researchops
+      POSTGRES_USER: researchops
+      POSTGRES_PASSWORD: local-compose-only
+    volumes:
+      - researchops-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U researchops"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  migrate:
+    build:
+      context: ../..
+      dockerfile: 07-production-engineering/infra/Dockerfile
+    command: [".venv/bin/python", "-m", "research_state.db", "--database-url", "postgresql+psycopg://researchops:local-compose-only@db/researchops"]
+    depends_on:
+      db:
+        condition: service_healthy
+  api:
+    build:
+      context: ../..
+      dockerfile: 07-production-engineering/infra/Dockerfile
+    environment: &app-env
+      DATABASE_URL: postgresql+psycopg://researchops:local-compose-only@db/researchops
+      DEMO_MODE: "true"
+      AUTO_MIGRATE: "false"
+      ENVIRONMENT: local
+    ports:
+      - "127.0.0.1:8000:8000"
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+  worker:
+    build:
+      context: ../..
+      dockerfile: 07-production-engineering/infra/Dockerfile
+    environment: *app-env
+    command: [".venv/bin/python", "-m", "research_service.worker"]
+    healthcheck:
+      disable: true
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+volumes:
+  researchops-data:

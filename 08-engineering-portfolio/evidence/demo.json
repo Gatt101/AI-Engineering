@@ -1,0 +1,59 @@
+{
+  "api": {
+    "api_flow": "passed",
+    "answer_mode": "extractive",
+    "citations": 2,
+    "restart": "passed",
+    "idempotency": "passed",
+    "approval_replay": "denied",
+    "unauthenticated_access": "denied",
+    "delivery": "fake",
+    "final_status": "completed"
+  },
+  "crash_recovery": {
+    "recovery_success": true,
+    "receipt_deduplicated": true,
+    "status": "completed",
+    "delivery": "fake",
+    "audit": [
+      {
+        "id": "1dd70556-bd3e-4b50-9877-25cdfc5afaab",
+        "run_id": "64d26f82-7719-4b64-81d4-4fc7519129a9",
+        "event": "action.approved",
+        "created_at": 100.0
+      },
+      {
+        "id": "6bb0692b-ef9f-4fd6-ba39-98797cdc364e",
+        "run_id": "64d26f82-7719-4b64-81d4-4fc7519129a9",
+        "event": "run.awaiting_approval",
+        "created_at": 100.0
+      },
+      {
+        "id": "7fce3c41-63d2-4966-904f-a224b7a0b7cc",
+        "run_id": "64d26f82-7719-4b64-81d4-4fc7519129a9",
+        "event": "action.dispatching",
+        "created_at": 100.0
+      },
+      {
+        "id": "b125af80-79e3-4c66-8dcc-080f4fe26e60",
+        "run_id": "64d26f82-7719-4b64-81d4-4fc7519129a9",
+        "event": "run.created",
+        "created_at": 100.0
+      },
+      {
+        "id": "b3c755b3-b725-45ed-8872-28f1523957f6",
+        "run_id": "64d26f82-7719-4b64-81d4-4fc7519129a9",
+        "event": "run.researched",
+        "created_at": 100.0
+      },
+      {
+        "id": "8f2b5ed3-9273-4a4a-a75a-c4ec6bacc988",
+        "run_id": "64d26f82-7719-4b64-81d4-4fc7519129a9",
+        "event": "action.sent",
+        "created_at": 102.0
+      }
+    ]
+  },
+  "cloud_deployment": "deferred by user",
+  "live_provider": "not measured"
+}

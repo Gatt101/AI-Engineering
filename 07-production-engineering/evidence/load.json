@@ -1,0 +1,9 @@
+{
+  "workload": "40 in-process ASGI extractive answers, SQLite",
+  "concurrency": 4,
+  "requests": 40,
+  "duration_seconds": 0.5333837000000585,
+  "error_rate": 0.0,
+  "p95_ms": 87.0886000000155,
+  "limitations": "Local regression sample; no deployment SLO or network/model benchmark."
+}

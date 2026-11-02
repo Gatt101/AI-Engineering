@@ -1,0 +1,49 @@
+[
+  {
+    "project": "01-native-llm-sdk",
+    "tests_exit_code": 0,
+    "test_summary": "..........................                                               [100%]\n26 passed in 3.94s\n"
+  },
+  {
+    "project": "02-retrieval-and-evidence",
+    "tests_exit_code": 0,
+    "test_summary": ".s.s.s.s.s.s.s.s.....sssss.....sssss..s.s.                               [100%]\n22 passed, 20 skipped in 2.03s\n",
+    "demo_exit_code": 0
+  },
+  {
+    "project": "03-tool-calling-agent",
+    "tests_exit_code": 0,
+    "test_summary": ".............................                                            [100%]\n29 passed in 3.28s\n",
+    "demo_exit_code": 0
+  },
+  {
+    "project": "04-persistence-and-state",
+    "tests_exit_code": 0,
+    "test_summary": "........s                                                                [100%]\n8 passed, 1 skipped in 2.45s\n",
+    "demo_exit_code": 0
+  },
+  {
+    "project": "05-durable-workflows",
+    "tests_exit_code": 0,
+    "test_summary": "..............                                                           [100%]\n14 passed in 2.98s\n",
+    "demo_exit_code": 0
+  },
+  {
+    "project": "06-evaluation-and-observability",
+    "tests_exit_code": 0,
+    "test_summary": ".                                                                        [100%]\n1 passed in 3.57s\n",
+    "demo_exit_code": 0
+  },
+  {
+    "project": "07-production-engineering",
+    "tests_exit_code": 0,
+    "test_summary": ".....                                                                    [100%]\n5 passed in 5.58s\n",
+    "demo_exit_code": 0
+  },
+  {
+    "project": "08-engineering-portfolio",
+    "tests_exit_code": 0,
+    "test_summary": ".                                                                        [100%]\n1 passed in 4.72s\n",
+    "demo_exit_code": 0
+  }
+]

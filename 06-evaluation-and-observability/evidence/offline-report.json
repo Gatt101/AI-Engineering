@@ -1,0 +1,271 @@
+{
+  "generated_at": "2026-11-01T07:37:04.006005+00:00",
+  "suite_version": "offline-v1",
+  "python": "3.14.0",
+  "retrieval": {
+    "dataset_version": "synthetic-researchops-v1",
+    "retrieval_version": "lexical-bm25-v1",
+    "generated_at": "2026-11-01T07:37:04.149964+00:00",
+    "sample_size": 9,
+    "model": null,
+    "usage": null,
+    "cost": null,
+    "mode": "offline-extractive",
+    "summary": {
+      "task_success_rate": 0.8888888888888888,
+      "overlap_recall_at_1": 0.5833333333333334,
+      "bm25_recall_at_1": 0.9166666666666666,
+      "retrieval_sample_size": 6,
+      "citation_count": 7,
+      "citation_validity_rate": 1.0,
+      "labeled_quote_support_rate": 0.8333333333333334,
+      "p50_ms": 7.528,
+      "p95_ms": 12.755
+    },
+    "cases": [
+      {
+        "id": "retention",
+        "split": "development",
+        "expected_status": "answered",
+        "actual_status": "answered",
+        "task_success": true,
+        "overlap_recall_at_1": 0.0,
+        "bm25_recall_at_1": 1.0,
+        "citation_count": 2,
+        "valid_citation_count": 2,
+        "citations_valid": true,
+        "support_expected": true,
+        "labeled_quote_support": true,
+        "duration_ms": 12.755
+      },
+      {
+        "id": "support",
+        "split": "development",
+        "expected_status": "answered",
+        "actual_status": "answered",
+        "task_success": true,
+        "overlap_recall_at_1": 1.0,
+        "bm25_recall_at_1": 1.0,
+        "citation_count": 1,
+        "valid_citation_count": 1,
+        "citations_valid": true,
+        "support_expected": true,
+        "labeled_quote_support": true,
+        "duration_ms": 7.129
+      },
+      {
+        "id": "escalation",
+        "split": "regression",
+        "expected_status": "answered",
+        "actual_status": "answered",
+        "task_success": true,
+        "overlap_recall_at_1": 1.0,
+        "bm25_recall_at_1": 1.0,
+        "citation_count": 1,
+        "valid_citation_count": 1,
+        "citations_valid": true,
+        "support_expected": true,
+        "labeled_quote_support": true,
+        "duration_ms": 6.818
+      },
+      {
+        "id": "export",
+        "split": "regression",
+        "expected_status": "answered",
+        "actual_status": "answered",
+        "task_success": true,
+        "overlap_recall_at_1": 1.0,
+        "bm25_recall_at_1": 1.0,
+        "citation_count": 1,
+        "valid_citation_count": 1,
+        "citations_valid": true,
+        "support_expected": true,
+        "labeled_quote_support": true,
+        "duration_ms": 6.672
+      },
+      {
+        "id": "conflict",
+        "split": "regression",
+        "expected_status": "conflicting_evidence",
+        "actual_status": "conflicting_evidence",
+        "task_success": true,
+        "overlap_recall_at_1": 0.5,
+        "bm25_recall_at_1": 0.5,
+        "citation_count": 2,
+        "valid_citation_count": 2,
+        "citations_valid": true,
+        "support_expected": true,
+        "labeled_quote_support": true,
+        "duration_ms": 9.046
+      },
+      {
+        "id": "unknown",
+        "split": "regression",
+        "expected_status": "insufficient_evidence",
+        "actual_status": "insufficient_evidence",
+        "task_success": true,
+        "overlap_recall_at_1": null,
+        "bm25_recall_at_1": null,
+        "citation_count": 0,
+        "valid_citation_count": 0,
+        "citations_valid": true,
+        "support_expected": false,
+        "labeled_quote_support": true,
+        "duration_ms": 7.179
+      },
+      {
+        "id": "stale",
+        "split": "regression",
+        "expected_status": "insufficient_evidence",
+        "actual_status": "insufficient_evidence",
+        "task_success": true,
+        "overlap_recall_at_1": null,
+        "bm25_recall_at_1": null,
+        "citation_count": 0,
+        "valid_citation_count": 0,
+        "citations_valid": true,
+        "support_expected": false,
+        "labeled_quote_support": true,
+        "duration_ms": 9.926
+      },
+      {
+        "id": "injection",
+        "split": "regression",
+        "expected_status": "insufficient_evidence",
+        "actual_status": "insufficient_evidence",
+        "task_success": true,
+        "overlap_recall_at_1": null,
+        "bm25_recall_at_1": null,
+        "citation_count": 0,
+        "valid_citation_count": 0,
+        "citations_valid": true,
+        "support_expected": false,
+        "labeled_quote_support": true,
+        "duration_ms": 7.528
+      },
+      {
+        "id": "paraphrase-limitation",
+        "split": "regression",
+        "expected_status": "answered",
+        "actual_status": "insufficient_evidence",
+        "task_success": false,
+        "overlap_recall_at_1": 0.0,
+        "bm25_recall_at_1": 1.0,
+        "citation_count": 0,
+        "valid_citation_count": 0,
+        "citations_valid": true,
+        "support_expected": true,
+        "labeled_quote_support": false,
+        "duration_ms": 9.913
+      }
+    ],
+    "limitations": [
+      "Small synthetic author-labeled dataset; no independent human review or live model quality measurement.",
+      "Quote support checks exact expected spans; it is separate from citation resolution and is not semantic entailment.",
+      "Lexical matching misses paraphrases. Conflict detection uses explicit claims metadata, not arbitrary contradiction reasoning.",
+      "BM25 compared with overlap at k=1 on answerable fresh cases; exclusion cases are scored separately."
+    ]
+  },
+  "denial": {
+    "request_id": "eval-denial",
+    "status": "completed",
+    "answer": "Access denied.",
+    "reason": null,
+    "rounds": 2,
+    "tool_calls": 1,
+    "usage_tokens": 0,
+    "prompt_version": "researchops-tools-v1",
+    "audit": [
+      {
+        "request_id": "eval-denial",
+        "event": "model",
+        "round": 1,
+        "status": "completed"
+      },
+      {
+        "request_id": "eval-denial",
+        "event": "tool",
+        "tool": "evidence_search",
+        "status": "requested"
+      },
+      {
+        "request_id": "eval-denial",
+        "event": "tool",
+        "tool": "evidence_search",
+        "status": "denied",
+        "code": "permission_denied",
+        "duration_ms": 0.034
+      },
+      {
+        "request_id": "eval-denial",
+        "event": "model",
+        "round": 2,
+        "status": "completed"
+      },
+      {
+        "request_id": "eval-denial",
+        "event": "agent",
+        "status": "completed",
+        "reason": null,
+        "duration_ms": 5.742
+      }
+    ]
+  },
+  "denial_passed": true,
+  "recovery": {
+    "recovery_success": true,
+    "receipt_deduplicated": true,
+    "status": "completed",
+    "delivery": "fake",
+    "audit": [
+      {
+        "id": "0ed64f7c-c49f-427f-a812-25e01b18fc8e",
+        "run_id": "76196a38-9c2a-4c30-9da9-4669f1b5c7e3",
+        "event": "action.approved",
+        "created_at": 100.0
+      },
+      {
+        "id": "2a2d65d0-40b6-436b-a714-db8475842570",
+        "run_id": "76196a38-9c2a-4c30-9da9-4669f1b5c7e3",
+        "event": "run.awaiting_approval",
+        "created_at": 100.0
+      },
+      {
+        "id": "67813e45-afe4-4b06-b44d-ac0d08e7525b",
+        "run_id": "76196a38-9c2a-4c30-9da9-4669f1b5c7e3",
+        "event": "run.created",
+        "created_at": 100.0
+      },
+      {
+        "id": "e0540787-39cf-42d9-a250-6dfecc3207f1",
+        "run_id": "76196a38-9c2a-4c30-9da9-4669f1b5c7e3",
+        "event": "run.researched",
+        "created_at": 100.0
+      },
+      {
+        "id": "f8ccd3f1-3077-40a7-937c-f1fb3de08a0f",
+        "run_id": "76196a38-9c2a-4c30-9da9-4669f1b5c7e3",
+        "event": "action.dispatching",
+        "created_at": 100.0
+      },
+      {
+        "id": "2dbc2bc1-08c5-4d8f-8a1b-6bdc7098523c",
+        "run_id": "76196a38-9c2a-4c30-9da9-4669f1b5c7e3",
+        "event": "action.sent",
+        "created_at": 102.0
+      }
+    ]
+  },
+  "live_model_quality": null,
+  "live_usage": null,
+  "live_cost": null,
+  "limitations": "Small authored synthetic regression set; no independent judge or live-model baseline.",
+  "gates": {
+    "task_success": true,
+    "retrieval_recall": true,
+    "citation_validity": true,
+    "permission_denial": true,
+    "recovery": true
+  },
+  "passed": true
+}

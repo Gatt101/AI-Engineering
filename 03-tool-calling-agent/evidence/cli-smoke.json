@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "research_tools"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"mode\": \"scripted\",\n  \"request_id\": \"demo-tools\",\n  \"status\": \"completed\",\n  \"answer\": \"See the returned Acme retention passages; offline trajectory fixture.\",\n  \"reason\": null,\n  \"rounds\": 2,\n  \"tool_calls\": 1,\n  \"usage_tokens\": 0,\n  \"prompt_version\": \"researchops-tools-v1\",\n  \"audit\": [\n    {\n      \"request_id\": \"demo-tools\",\n      \"event\": \"model\",\n      \"round\": 1,\n      \"status\": \"completed\"\n    },\n    {\n      \"request_id\": \"demo-tools\",\n      \"event\": \"tool\",\n      \"tool\": \"evidence_search\",\n      \"status\": \"requested\"\n    },\n    {\n      \"request_id\": \"demo-tools\",\n      \"event\": \"tool\",\n      \"tool\": \"evidence_search\",\n      \"status\": \"failed\",\n      \"code\": \"tool_failed\",\n      \"duration_ms\": 15.568\n    },\n    {\n      \"request_id\": \"demo-tools\",\n      \"event\": \"model\",\n      \"round\": 2,\n      \"status\": \"completed\"\n    },\n    {\n      \"request_id\": \"demo-tools\",\n      \"event\": \"agent\",\n      \"status\": \"completed\",\n      \"reason\": null,\n      \"duration_ms\": 22.301\n    }\n  ]\n}\n",
+  "stderr": "Exception closing connection <sqlite3.Connection object at 0x000001E015FF74C0>\nTraceback (most recent call last):\n  File \"G:\\Projects\\Agentic-AI\\.venv\\Lib\\site-packages\\sqlalchemy\\pool\\base.py\", line 372, in _close_connection\n    self._dialect.do_close(connection)\n    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\n  File \"G:\\Projects\\Agentic-AI\\.venv\\Lib\\site-packages\\sqlalchemy\\engine\\default.py\", line 960, in do_close\n    dbapi_connection.close()\n    ~~~~~~~~~~~~~~~~~~~~~~^^\nsqlite3.ProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 5824 and this is thread id 11648.\n"
+}

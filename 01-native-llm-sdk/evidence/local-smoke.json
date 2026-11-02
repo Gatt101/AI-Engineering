@@ -1,0 +1,10 @@
+{
+  "health": {
+    "status": "ok",
+    "provider_configured": false
+  },
+  "cli_exit_code": 1,
+  "cli_error": "not_configured",
+  "result": "passed",
+  "live_openai_call": false
+}

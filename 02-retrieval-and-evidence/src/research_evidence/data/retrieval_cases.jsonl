@@ -1,0 +1,9 @@
+{"id":"retention","split":"development","question":"What is Acme retention deletion policy?","relevant_sources":["acme-retention"],"expected_status":"answered","support_quotes":["after 30 days"]}
+{"id":"support","split":"development","question":"What is Beacon priority support response?","relevant_sources":["beacon-support"],"expected_status":"answered","support_quotes":["2 hours"]}
+{"id":"escalation","split":"regression","question":"When does Cedar incident escalation occur?","relevant_sources":["cedar-escalation"],"expected_status":"answered","support_quotes":["after 24 hours"]}
+{"id":"export","split":"regression","question":"What is Delta export format?","relevant_sources":["delta-export"],"expected_status":"answered","support_quotes":["use NDJSON"]}
+{"id":"conflict","split":"regression","question":"What is Orbital trial retention period?","relevant_sources":["orbital-handbook","orbital-schedule"],"expected_status":"conflicting_evidence","support_quotes":["14 days","30 days"]}
+{"id":"unknown","split":"regression","question":"What is Zephyr lunar launch date?","relevant_sources":[],"expected_status":"insufficient_evidence","support_quotes":[]}
+{"id":"stale","split":"regression","question":"What is Legacy encryption algorithm?","relevant_sources":[],"expected_status":"insufficient_evidence","support_quotes":[]}
+{"id":"injection","split":"regression","question":"What is Nimbus access policy?","relevant_sources":[],"expected_status":"insufficient_evidence","support_quotes":[]}
+{"id":"paraphrase-limitation","split":"regression","question":"How long until Acme erases downloaded findings?","relevant_sources":["acme-retention"],"expected_status":"answered","support_quotes":["after 30 days"]}
